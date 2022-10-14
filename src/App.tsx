@@ -3,6 +3,9 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const params = new URL(location.href).searchParams;
+  const res = params.get("SAMLResponse");
+  console.log("response", res);
   return (
     <div className="App">
       <button
@@ -13,7 +16,7 @@ function App() {
           outline: "none",
           padding: "8px",
           cursor: "pointer",
-          marginTop: "20px"
+          marginTop: "20px",
         }}
       >
         LOGIN WITH GOOGLE
