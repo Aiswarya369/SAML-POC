@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const params = new URL(location.href).searchParams;
+  const params = new URL(window.location.href).searchParams;
   const res = params.get("SAMLResponse");
   console.log("response", res);
   return (
