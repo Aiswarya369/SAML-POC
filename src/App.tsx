@@ -1,27 +1,21 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
+import Login from "./Login";
 
 function App() {
-  const params = new URL(window.location.href).searchParams;
-  const res = params.get("SAMLResponse");
-  console.log("response", res);
   return (
-    <div className="App">
-      <button
-        style={{
-          backgroundColor: "red",
-          color: "white",
-          borderStyle: "none",
-          outline: "none",
-          padding: "8px",
-          cursor: "pointer",
-          marginTop: "20px",
-        }}
-      >
-        LOGIN WITH GOOGLE
-      </button>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route exact path="/login" render={() => <Login />} />
+        <Redirect to="/login" />
+      </Switch>
+    </Router>
   );
 }
 
