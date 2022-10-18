@@ -1,10 +1,12 @@
 import React from "react";
 
 const index = () => {
-  const params = new URL(window.location.href).searchParams;
-  const res = params.get("SAMLResponse");
-  console.log("response", res);
-  return <>Welcome Home!!</>;
+  const queryParams = new URLSearchParams(window.location.search);
+  const firstName = queryParams.get("first_name");
+
+  console.log(firstName)
+
+  return <>Welcome Home {firstName}!!</>;
 };
 
 export default index;
