@@ -4,7 +4,7 @@ const index = () => {
   const handleLogin = () => {
     axios.get("http://127.0.0.1:8000/login").then(function (response) {
       console.log("response", response);
-      window.location.replace = response?.data;
+      window.location.replace(response?.data);
     });
   };
 
