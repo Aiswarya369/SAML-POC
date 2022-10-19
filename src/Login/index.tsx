@@ -1,9 +1,13 @@
 import React from "react";
+import axios from "axios";
 
 const index = () => {
-  const params = new URL(window.location.href).searchParams;
-  const res = params.get("SAMLResponse");
-  console.log("response", res);
+  const handleLogin = () => {
+    axios.get("http://127.0.0.1:8000/login").then(function (response) {
+      console.log(response);
+    });
+  };
+
   return (
     <>
       <button
@@ -16,6 +20,7 @@ const index = () => {
           cursor: "pointer",
           marginTop: "20px",
         }}
+        onClick={handleLogin}
       >
         LOGIN WITH GOOGLE
       </button>
