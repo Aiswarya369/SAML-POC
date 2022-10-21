@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const index = () => {
-  const handleLogin = () => {
-    axios
-      .get("https://00bb-45-249-169-151.in.ngrok.io/api/user/login",{
-        headers: {
-          contentType: "application/json",
-        }
-      })
-      .then(function (response) {
-        console.log("response", response);
-        window.location.replace(response?.data);
-      });
+  const handleLogin = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.dev.cars.experionglobal.dev/api/user/login",
+    
+      );
+      console.log("response", response.data);
+      window.location.replace(response?.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

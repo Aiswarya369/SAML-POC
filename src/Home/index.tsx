@@ -9,7 +9,7 @@ const index = () => {
   if (userId) {
     axios
       .get(
-        `https://00bb-45-249-169-151.in.ngrok.io/api/user/verify_authorization?userId=${userId}`
+        `https://api.dev.cars.experionglobal.dev/api/user/verify_authorization?userId=${userId}`
       )
       .then(function (response) {
         console.log("response", response);
