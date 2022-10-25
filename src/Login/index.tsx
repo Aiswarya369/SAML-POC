@@ -4,8 +4,7 @@ const index = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.get(
-        "https://api.dev.ims.experionglobal.dev/api/user/login",
-    
+        "https://api.dev.ims.experionglobal.dev/api/user/web_login"
       );
       console.log("response", response.data);
       window.location.replace(response?.data);
