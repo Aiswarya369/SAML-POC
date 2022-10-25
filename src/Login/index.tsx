@@ -4,7 +4,7 @@ const index = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.get(
-        "https://api.dev.cars.experionglobal.dev/api/user/login",
+        "https://api.dev.ims.experionglobal.dev/api/user/login",
     
       );
       console.log("response", response.data);

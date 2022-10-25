@@ -9,7 +9,7 @@ const index = () => {
   if (userId) {
     axios
       .get(
-        `https://api.dev.cars.experionglobal.dev/api/user/verify_authorization?user_id=${userId}`
+        `https://api.dev.ims.experionglobal.dev/api/user/verify_authorization?user_id=${userId}`
       )
       .then(function (response) {
         console.log("response", response);
